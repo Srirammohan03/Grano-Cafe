@@ -112,7 +112,7 @@ export const Timeline = () => {
           ))}
         </div>
       </section>
-      <div className="h-[20vh] bg-background" />
+      {/* <div className="h-[20vh] bg-background" /> */}
     </section>
   );
 };
