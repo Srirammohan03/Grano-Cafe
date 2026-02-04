@@ -95,7 +95,7 @@ export const timelineHours: TimelineHour[] = [
     id: 1,
     title: 'Breaking the Ice',
     phase: 'Strangers → Friends',
-    description: 'Arrive at your sanctuary. Let the ambiance melt your walls as you reconnect through playful games designed to spark joy.',
+    description: 'Arrive at your table. Let the ambiance melt your walls as you reconnect through playful games designed to spark joy.',
     activities: ['Welcome drinks & arrival', 'Icebreaker games', 'First course tasting'],
     games: [games.howWellDoYouKnowMe, games.slowQuestions],
     icon: 'ice',
@@ -142,7 +142,7 @@ export const eventDetails = {
     'Multi-course tasting experience',
     'Signature dessert ritual',
     'Polaroid takeaway',
-    "Exclusive couple's sanctuary seating",
+    "Exclusive couple's table seating",
   ],
 };
 

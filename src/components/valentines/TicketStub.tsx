@@ -233,13 +233,13 @@ export const TicketStub = () => {
           className="text-center mb-12"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium tracking-wider uppercase mb-6">
-            Reserve Your Sanctuary
+            Reserve Your Table
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
             Make it <span className="text-primary neon-text">Official</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Limited sanctuaries available. Secure yours today.
+            Limited Tables available. Secure yours today.
           </p>
         </motion.div>
 
@@ -417,7 +417,7 @@ export const TicketStub = () => {
                       ) : (
                         <>
                           <Heart className="w-5 h-5" />
-                          Pay & Reserve Your Sanctuary
+                          Pay & Book Your Table
                         </>
                       )}
                     </motion.button>
@@ -445,7 +445,7 @@ export const TicketStub = () => {
                       You're In!
                     </h3>
                     <p className="text-muted-foreground mb-4">
-                      Your sanctuary is reserved. Check your email for confirmation.
+                      Your table is reserved. Check your email for confirmation.
                     </p>
                     <div className="inline-block px-6 py-3 rounded-full bg-primary/10 border border-primary/30">
                       <span className="font-display text-xl text-primary">

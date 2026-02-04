@@ -23,7 +23,8 @@ const Header = () => {
         {/* Date pill */}
         <div className="glass rounded-full px-6 py-2 backdrop-blur-md">
           <span className="text-xs md:text-sm text-muted-foreground">
-            {eventDetails.date} • {eventDetails.cafeTimings}
+           Valentine's Day • {eventDetails.date} 
+            {/* • {eventDetails.cafeTimings} */}
           </span>
         </div>
       </div>

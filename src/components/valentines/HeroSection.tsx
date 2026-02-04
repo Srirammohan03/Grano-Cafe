@@ -1,4 +1,4 @@
-import { Heart, Clock, MapPin } from 'lucide-react';
+import { Heart, Clock, MapPin, Calendar } from 'lucide-react';
 import { eventDetails } from '@/data/mockData';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -24,27 +24,13 @@ export const HeroSection = () => {
     >
       {/* Background video parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
-        <video
-          className="hidden md:block w-full h-full object-cover"
-          src="/desk.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-        <video
-          className="block md:hidden w-full h-full object-cover"
-          src="/mob.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
+        <video className="hidden md:block w-full h-full object-cover" src="/desk.mp4" autoPlay muted loop playsInline />
+        <video className="block md:hidden w-full h-full object-cover" src="/mob.mp4" autoPlay muted loop playsInline />
         <div className="absolute inset-0 bg-black/65" />
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto text-white mt-10 sm:mt-10 md:mt-0">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto text-white">
 
         {/* Event badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 mb-8 backdrop-blur-sm">
@@ -70,61 +56,54 @@ export const HeroSection = () => {
           {eventDetails.tagline}
         </p>
 
-        {/* Slots + Map layout */}
-        <div className="mb-10 text-white/80">
+        {/* ===== 2 Column Info Layout (centered) ===== */}
+        <div className="flex justify-center mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6 text-white/80 text-left">
 
-          {/* Mobile layout (stacked) */}
-          <div className="flex flex-col items-center gap-4 md:hidden">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-primary" />
-              <span>{eventDetails.eventSlots[0]}</span>
+            {/* Column 1 — Slots */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-primary" />
+                <span>{eventDetails.eventSlots[0]}</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-primary" />
+                <span>{eventDetails.eventSlots[1]}</span>
+              </div>
+              
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-primary" />
-              <span>{eventDetails.eventSlots[1]}</span>
+
+            {/* Column 2 — Date, Cafe, Map */}
+            <div className="space-y-2">
+              <div className="flex items-start gap-3">
+                <Calendar className="w-5 h-5 text-primary mt-1" />
+                <div>
+                  <div className="font-medium">Event Date</div>
+                  {eventDetails.date}
+                </div>
+              </div>
+
+              {/* <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-primary mt-1" />
+                <div>
+                  <div className="font-medium">Cafe Timings</div>
+                  {eventDetails.cafeTimings}
+                </div>
+              </div> */}
+              <a
+                href="https://maps.app.goo.gl/HZ2FPUNYcSn7UPYj9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-primary transition-colors"
+              >
+                <MapPin className="w-5 h-5 text-primary" />
+                <span>{eventDetails.venue}</span>
+              </a>
+              
             </div>
-            <a
-              href="https://maps.app.goo.gl/HZ2FPUNYcSn7UPYj9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
-            >
-              <MapPin className="w-5 h-5 text-primary" />
-              <span>{eventDetails.venue}</span>
-            </a>
+
           </div>
-
-          {/* Desktop layout */}
-<div className="hidden md:flex justify-center">
-  <div className="flex items-center gap-16">
-    
-    {/* Slots */}
-    <div className="flex flex-col items-start gap-6">
-      <div className="flex items-center gap-2">
-        <Clock className="w-5 h-5 text-primary" />
-        <span>{eventDetails.eventSlots[0]}</span>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <Clock className="w-5 h-5 text-primary" />
-        <span>{eventDetails.eventSlots[1]}</span>
-      </div>
-    </div>
-
-    {/* Map */}
-    <a
-      href="https://maps.app.goo.gl/HZ2FPUNYcSn7UPYj9"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 hover:text-primary transition-colors"
-    >
-      <MapPin className="w-5 h-5 text-primary" />
-      <span>{eventDetails.venue}</span>
-    </a>
-
-  </div>
-</div>
-
         </div>
 
         {/* CTA */}
@@ -137,6 +116,7 @@ export const HeroSection = () => {
             {eventDetails.currency}{eventDetails.price.toLocaleString()}
           </span>
         </button>
+
       </div>
     </section>
   );
